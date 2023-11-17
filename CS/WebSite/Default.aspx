@@ -7,7 +7,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-
     <script type="text/javascript">
         function OnSelectedIndexChanged(s, e) {
             alert(s.GetText());
@@ -16,19 +15,14 @@
             return ASPxClientUtils.PreventEventAndBubble(evt);
         }
     </script>
-
 </head>
 <body>
     <form id="form1" runat="server">
-    <dx:ASPxGridView ID="grid" runat="server" AutoGenerateColumns="False" DataSourceID="ads"
-        KeyFieldName="ProductID">
+    <dx:ASPxGridView ID="grid" runat="server" AutoGenerateColumns="False" DataSourceID="ads" KeyFieldName="ProductID">
         <Columns>
-            <dx:GridViewDataTextColumn FieldName="ProductID" ReadOnly="True" VisibleIndex="0">
-                <EditFormSettings Visible="False" />
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="ProductName" VisibleIndex="1">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataComboBoxColumn FieldName="CategoryID" VisibleIndex="2">
+            <dx:GridViewDataTextColumn FieldName="ProductID" ReadOnly="True" />
+            <dx:GridViewDataTextColumn FieldName="ProductName" />
+            <dx:GridViewDataComboBoxColumn FieldName="CategoryID" >
                 <PropertiesComboBox ValueType="System.Int32" TextField="CategoryName" ValueField="CategoryID">
                 </PropertiesComboBox>
                 <HeaderCaptionTemplate>
@@ -40,14 +34,11 @@
                     </div>
                 </HeaderCaptionTemplate>
             </dx:GridViewDataComboBoxColumn>
-            <dx:GridViewDataTextColumn FieldName="UnitPrice" VisibleIndex="3">
-            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="UnitPrice" />
         </Columns>
     </dx:ASPxGridView>
-    <asp:AccessDataSource ID="ads" runat="server" DataFile="~/App_Data/nwind.mdb" SelectCommand="SELECT [ProductID], [ProductName], [CategoryID], [UnitPrice] FROM [Products]">
-    </asp:AccessDataSource>
-    <asp:AccessDataSource ID="dsCmb" runat="server" DataFile="~/App_Data/nwind.mdb"
-        SelectCommand="SELECT [CategoryID], [CategoryName] FROM [Categories]"></asp:AccessDataSource>
+    <asp:AccessDataSource ID="ads" runat="server" DataFile="~/App_Data/nwind.mdb" SelectCommand="SELECT [ProductID], [ProductName], [CategoryID], [UnitPrice] FROM [Products]" />
+    <asp:AccessDataSource ID="dsCmb" runat="server" DataFile="~/App_Data/nwind.mdb" SelectCommand="SELECT [CategoryID], [CategoryName] FROM [Categories]" />
     </form>
 </body>
 </html>
