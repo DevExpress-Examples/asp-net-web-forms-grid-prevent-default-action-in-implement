@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Grid View for ASP.NET Web Forms - How to specify HeaderCaptionTemplate and prevent the default mouse actions
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128535892/)**
-<!-- run online end -->
 
 This example demonstrates how to add a control in a column header and prevent a default action for the specified events.
   
